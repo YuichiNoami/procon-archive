@@ -1,0 +1,12 @@
+{
+	"id": 1968260,
+	"epoch_second": 1515842036,
+	"problem_id": "dwacon2018_prelims_a",
+	"contest_id": "dwacon2018-prelims",
+	"user_id": "yuichin925",
+	"language": "PHP (5.6.30)",
+	"point": 100,
+	"length": 171,
+	"result": "AC",
+	"execution_time": 11
+}
