@@ -1,0 +1,33 @@
+<?php
+$input = explode(' ', trim(fgets(STDIN)));
+$height = intval($input[0]);
+$width = intval($input[1]);
+$table = [];
+$flag = [];
+for ($i=0; $i < $height; $i++) { 
+    $tmp = trim(fgets(STDIN));
+    $len = strlen($tmp);
+    for ($j=0; $j < $len; $j++) { 
+        if ($tmp[$j] == '#') {
+            $flag[$j] = true;
+        }
+    }
+    if (($key = strpos($tmp, '#')) !== false) {
+        $table[$i] = $tmp;
+    }
+}
+$new = [];
+for ($i=0; $i < $height; $i++) { 
+    $new[$i] = false;
+    for ($j=0; $j < $width; $j++) { 
+        if (isset($flag[$j]) &&  $flag[$j] === true) {
+            if (isset($table[$i][$j])) {
+                echo $table[$i][$j];
+                $new[$i] = true;
+            }   
+        }
+    }
+    if ($new[$i]) {
+        echo "\n";
+    } 
+}
