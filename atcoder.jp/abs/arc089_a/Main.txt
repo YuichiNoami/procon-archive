@@ -1,0 +1,13 @@
+<?php
+fscanf(STDIN, '%d', $cnt);
+for ($i=0; $i < $cnt; $i++) { 
+    $row[] = explode(' ', trim(fgets(STDIN)));
+}
+foreach ($row as $value) {
+    list($time, $x, $y) = $value;
+    if ($x + $y > $time || ($time + $x + $y) % 2 != 0) {
+        echo "No\n";
+        exit;
+    }
+}
+echo "Yes\n";
