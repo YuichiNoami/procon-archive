@@ -1,0 +1,13 @@
+<?php
+fscanf(STDIN, '%d %d', $sheets, $price);
+for ($i=0; $i <= $sheets; $i++) { 
+    for ($j=0; $j <= $sheets - $i; $j++) { 
+        $k = $sheets - $i - $j;
+        if ((10000 * $i) + (5000 * $j) + (1000 * $k) == $price)
+        {
+            echo "$i $j $k\n";
+            exit;
+        }
+    }
+}
+echo "-1 -1 -1\n";
