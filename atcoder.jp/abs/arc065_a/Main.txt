@@ -1,0 +1,20 @@
+<?php
+$parts = array('remaerd', 'maerd', 'resare', 'esare');
+
+$input = strrev(trim(fgets(STDIN)));
+$length = strlen($input);
+
+$body = '';
+
+for ($i=0; $i < $length; $i++) {
+  $body .= $input[$i];
+  if (in_array($body, $parts)) {
+    $body = str_replace($body, '', $body);
+  }
+}
+
+if ($body) {
+  echo "NO\n";
+} else {
+  echo "YES\n";
+}
