@@ -1,0 +1,11 @@
+<?php
+fscanf(STDIN, '%d %d %d %d', $N, $M, $X, $Y);
+$XsHope = explode(' ', trim(fgets(STDIN)));
+$YsHope = explode(' ', trim(fgets(STDIN)));
+for ($i=$X; $i <= $Y; $i++) {
+  if (max($XsHope) < $i && min($YsHope) >= $i && $i > $X && $i <= $Y) {
+    echo "No War\n";
+    exit;
+  }
+}
+echo "War\n";
