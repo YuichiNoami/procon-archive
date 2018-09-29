@@ -1,0 +1,7 @@
+<?php
+$nums = str_split(trim(fgets(STDIN)));
+$cnt = count($nums);
+for ($i=0; $i < $cnt; $i++) { 
+    $nums[$i] = $nums[$i] > 1 ? 1 : 9;
+}
+echo implode($nums)."\n";
