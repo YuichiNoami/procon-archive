@@ -1,0 +1,10 @@
+<?php
+fscanf(STDIN, '%d', $next);
+for ($i=0; $i < 999; $i++) { 
+    $tmp = str_split($next);
+    if ($tmp[0] ==$tmp[1] && $tmp[0] == $tmp[2]) {
+        echo $next."\n";
+        exit;
+    }
+    $next++;
+}
