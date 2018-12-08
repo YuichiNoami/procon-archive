@@ -1,0 +1,13 @@
+<?php
+fscanf(STDIN, '%d', $num);
+
+echo "Christmas";
+
+for ($i=0; $i < 25 - $num; $i++) { 
+    if (25- $num <= 0) {
+        break;
+    }
+    echo " Eve";
+}
+
+echo "\n";
