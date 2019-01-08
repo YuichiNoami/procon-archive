@@ -1,0 +1,23 @@
+<?php
+define('A_YEN_500', 500);
+define('B_YEN_100', 100);
+define('C_YEN_50', 50);
+
+fscanf(STDIN, '%d', $a500Cnt);
+fscanf(STDIN, '%d', $b100Cnt);
+fscanf(STDIN, '%d', $c50Cnt);
+fscanf(STDIN, '%d', $target);
+
+$ans = 0;
+
+for ($i=0; $i <= $a500Cnt; $i++) { 
+    for ($j=0; $j <= $b100Cnt; $j++) { 
+        for ($k=0; $k <= $c50Cnt; $k++) { 
+            if (A_YEN_500 * $i + B_YEN_100 * $j + C_YEN_50 * $k === $target) {
+                $ans++;
+            }
+        }
+    }
+}
+
+echo $ans."\n";
