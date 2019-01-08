@@ -1,0 +1,11 @@
+<?php
+fscanf(STDIN, '%d %d %d', $org, $min, $max);
+$ansList = [];
+for ($i=1; $i <= $org; $i++) { 
+    $tmpArr = str_split($i);
+    $sum = array_sum($tmpArr);
+    if ($sum >= $min && $sum <= $max) {
+        $ansList[] = $i;
+    }
+}
+echo array_sum($ansList)."\n";
