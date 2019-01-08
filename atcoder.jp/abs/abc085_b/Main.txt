@@ -1,0 +1,10 @@
+<?php
+fscanf(STDIN, '%d', $mochiCnt);
+$mochiArr = [];
+for ($i=0; $i < $mochiCnt; $i++) { 
+    fscanf(STDIN, '%d', $mochiArr[]);
+}
+rsort($mochiArr);
+$mochiArr = array_values(array_unique($mochiArr));
+$ansArr = array_slice($mochiArr, 0, $mochiCnt);
+echo count($ansArr)."\n";
