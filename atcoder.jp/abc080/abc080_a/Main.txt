@@ -1,0 +1,3 @@
+<?php
+fscanf(STDIN, '%d %d %d', $n, $a, $b);
+echo min($n*$a, $b)."\n";
