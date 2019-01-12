@@ -1,0 +1,16 @@
+<?php
+fscanf(STDIN, '%d', $num);
+fscanf(STDIN, '%d %d', $a, $b);
+$pArr = explode(' ', trim(fgets(STDIN)));
+list($e, $m, $h) = [0, 0, 0];
+for ($i=0; $i < $num; $i++) { 
+    if ($pArr[$i] <= $a) {
+        $e++;
+    } elseif ($pArr[$i] <= $b) {
+        $m++;
+    } else {
+        $h++;
+    }
+}
+
+echo min($e, $m, $h)."\n";
