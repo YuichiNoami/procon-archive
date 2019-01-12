@@ -1,0 +1,6 @@
+<?php
+fscanf(STDIN, '%d', $num);
+fscanf(STDIN, '%d', $height);
+fscanf(STDIN, '%d', $width);
+
+echo ceil($num - $height + 1) * ceil($num- $width + 1)."\n"; 
