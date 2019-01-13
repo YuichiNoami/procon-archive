@@ -1,0 +1,21 @@
+<?php
+fscanf(STDIN, '%s', $str);
+$word = 'keyence';
+if (substr($str, 0, 7) === $word || substr($str, -7, 7) === $word) {
+    echo 'YES';
+} else {
+    for ($i=1; $i < 7; $i++) { 
+        $key = substr($str, 0, $i);
+    }
+
+    for ($i=1; $i < 7; $i++) { 
+        $key  = substr($word, 0, $i);
+        $ence = substr($word, $i-7);
+        if (substr($str, 0, $i) === $key && substr($str, $i-7) === $ence) {
+            echo "YES"."\n";
+            exit;
+        }
+    }
+    echo "NO";
+}
+echo "\n";
