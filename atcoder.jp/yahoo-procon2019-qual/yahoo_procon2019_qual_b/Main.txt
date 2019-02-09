@@ -1,0 +1,14 @@
+<?php
+fscanf(STDIN, '%d %d', $a1, $b1);
+fscanf(STDIN, '%d %d', $a2, $b2);
+fscanf(STDIN, '%d %d', $a3, $b3);
+
+$nums = [
+    $a1, $b1,
+    $a2, $b2,
+    $a3, $b3,
+];
+
+$counts = array_count_values($nums);
+
+echo $counts[2] == 2 && $counts[3] == 2 ? 'YES' : 'NO' . "\n";
