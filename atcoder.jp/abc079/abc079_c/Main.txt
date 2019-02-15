@@ -1,0 +1,28 @@
+<?php
+$nums = str_split(trim(fgets(STDIN)));
+
+$a = $nums[0];
+$b = $nums[1];
+$c = $nums[2];
+$d = $nums[3];
+
+$opes = [
+    ['+', '+', '+'],
+    ['+', '+', '-'],
+    ['+', '-', '+'],
+    ['+', '-', '-'],
+    ['-', '+', '+'],
+    ['-', '+', '-'],
+    ['-', '-', '+'],
+    ['-', '-', '-'],
+];
+
+$cnt = count($opes);
+
+for ($i=0; $i < $cnt; $i++) { 
+    $form = $a.$opes[$i][0].$b.$opes[$i][1].$c.$opes[$i][2].$d;
+    if (eval("return $form;") == 7) {
+        echo $form.'=7'."\n";
+        break;
+    }
+}
