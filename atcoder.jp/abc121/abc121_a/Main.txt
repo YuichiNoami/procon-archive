@@ -1,0 +1,4 @@
+<?php
+fscanf(STDIN, '%d %d', $H, $W);
+fscanf(STDIN, '%d %d', $h, $w);
+echo ($H-$h) * ($W-$w)."\n";
