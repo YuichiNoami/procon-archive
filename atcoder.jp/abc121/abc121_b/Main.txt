@@ -1,0 +1,16 @@
+<?php
+fscanf(STDIN, '%d %d %d', $N, $M, $C);
+$Bs = explode(' ', trim(fgets(STDIN)));
+$ans = 0;
+for ($i=0; $i < $N; $i++) { 
+    $line = explode(' ', trim(fgets(STDIN)));
+    $exp = 0;
+    foreach ($line as $key => $value) {
+        $exp += $value * $Bs[$key];
+    }
+    $exp += $C;
+    if ($exp > 0) {
+        $ans++;
+    }
+}
+echo $ans."\n";
