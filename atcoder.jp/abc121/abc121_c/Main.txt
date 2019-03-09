@@ -1,0 +1,23 @@
+<?php
+fscanf(STDIN, '%d %d', $N, $M);
+$store = [];
+for ($i=0; $i < $N; $i++) { 
+    fscanf(STDIN, '%d %d', $A, $B);
+    $store[] = ['price' => $A, 'max' => $B];
+}
+array_multisort(array_column($store, 'price'), SORT_ASC, array_column($store, 'max'), SORT_DESC, $store);
+$ans = 0;
+$now = 0;
+foreach ($store as $key => $value) {
+    if ($now >= $M) {
+        break;
+    }
+    for ($i=0; $i < $value['max']; $i++) { 
+        if ($now >= $M) {
+            break 2;
+        }
+        $ans += $value['price'];
+        $now++;
+    }
+}
+echo $ans."\n";
