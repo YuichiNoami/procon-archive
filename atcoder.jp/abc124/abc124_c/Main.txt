@@ -1,0 +1,32 @@
+<?php
+fscanf(STDIN, '%s', $line);
+$panels = str_split($line);
+$length = count($panels);
+
+$answer = 0;
+
+$count = array_count_values($panels);
+if (!isset($count['1'])) {
+    $target = '1';
+} elseif (!isset($count['0']) && isset($count['1']) || $count['1'] > $count['0']) {
+    $target = '0';
+} elseif (!isset($count['1']) && isset($count['0']) || $count['1'] < $count['0']) {
+    $target = '1';
+} else {
+    $target = $panels[0];
+}
+
+$flg = $panels[0] != $target;
+foreach ($panels as $key => $panel) {
+    if ($flg ? $panel == $target : $panel != $target) {
+        if ($panel == '0') {
+            $panels[$key] = '1';
+        } elseif ($panel == '1') {
+            $panels[$key] == '0';
+        }
+        $answer++;
+    }
+    $flg = !$flg;
+}
+
+echo $answer;
