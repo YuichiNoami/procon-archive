@@ -1,0 +1,6 @@
+<?php
+fscanf(STDIN, '%d %d', $a, $b);
+$max1 = max($a, $b);
+$tmp = $max1 - 1;
+$max2 = max($tmp, min($a, $b));
+echo $max1 + $max2;
