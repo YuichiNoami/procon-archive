@@ -1,0 +1,40 @@
+<?php
+fscanf(STDIN, '%d %d', $len, $k);
+fscanf(STDIN, '%s', $line);
+$org = str_split($line);
+$map = [];
+$now = 1;
+$cnt = 0;
+for ($i=0; $i < $len; $i++) { 
+    if ($org[$i] == $now) {
+        $cnt++;
+    } else {
+        $map[] = $cnt;
+        $now = 1 - $now;
+        $cnt = 1;
+    }
+}
+
+if ($cnt) {
+    $map[] = $cnt;
+}
+
+if (count($map) % 2 == 0) {
+    $map[] = 0;
+}
+
+$mapLen = count($map);
+$tmpArr = array_fill(0, $mapLen + 1, 0);
+for ($i=0; $i < $mapLen; $i++) { 
+    $tmpArr[$i + 1] = $tmpArr[$i] + $map[$i];
+}
+
+$max = 0;
+for($i = 0; $i < $mapLen; $i+=2){
+    $left = $i;
+    $right = min($i + 2 * $k + 1, $mapLen);
+    $tmp = $tmpArr[$right] - $tmpArr[$left];
+
+    $max = max($max, $tmp);
+}
+echo $max;
