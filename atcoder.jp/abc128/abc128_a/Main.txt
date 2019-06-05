@@ -1,0 +1,4 @@
+<?php
+fscanf(STDIN, '%d %d', $all, $piece);
+$piece += $all * 3;
+echo floor($piece / 2)."\n";
