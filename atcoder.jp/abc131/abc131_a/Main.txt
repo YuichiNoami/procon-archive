@@ -1,0 +1,11 @@
+<?php
+fscanf(STDIN, '%s', $key);
+$prev = '';
+for ($i=0; $i < 4; $i++) {
+    if ($i > 0 && $key[$i] === $prev) {
+        echo "Bad\n";
+        exit;
+    } 
+    $prev = $key[$i];
+}
+echo "Good\n";
