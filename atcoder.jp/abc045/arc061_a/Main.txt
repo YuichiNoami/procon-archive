@@ -1,0 +1,25 @@
+<?php
+fscanf(STDIN, '%s', $input);
+$nums = str_split($input);
+$len = count($nums);
+$ans = $input;
+$memo = [];
+if ($len <= 1) {
+    echo $ans."\n";
+    exit;
+} else {
+    for ($idx=0; $idx < (1 << ($len-1)); $idx++) {
+        $nums = str_split($input);
+        for ($plus=0; $plus < $len; $plus++) { 
+            if($idx >> $plus & 1){
+                $nums[$plus] .= '+';
+                $str = implode($nums);
+                if (!in_array($str, $memo)) {
+                    $ans += eval("return $str;");
+                    $memo[] = $str;
+                }
+            }
+        }
+    }
+}
+echo $ans."\n";
