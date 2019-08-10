@@ -1,0 +1,9 @@
+<?php
+$ans = 0;
+fscanf(STDIN, '%d', $num);
+for($i=1; $i<=$num; $i++) {
+    if (strlen($i) % 2 !== 0) {
+        $ans++;
+    }
+}
+echo $ans;
