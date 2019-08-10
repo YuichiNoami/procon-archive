@@ -1,0 +1,4 @@
+<?php
+fscanf(STDIN, '%d %d %d', $max, $now, $move);
+$res = $move - ($max - $now);
+echo $res > 0 ? $res : 0;
