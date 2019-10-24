@@ -1,0 +1,4 @@
+<?php
+  fscanf(STDIN, '%d %d', $width, $length);
+  $ans = $width - $length * 2;
+  echo $ans > 0 ? $ans : 0;
