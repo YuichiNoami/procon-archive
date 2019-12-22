@@ -1,0 +1,16 @@
+<?php
+fscanf(STDIN, '%d %d', $a, $b);
+echo lcm($a, $b);
+
+function gcd ($m, $n) {
+    while ($m % $n !== 0) {
+        $temp = $n;
+        $n = $m % $n;
+        $m = $temp;
+    }
+    return $n;
+}
+    
+function lcm ($m, $n) {
+    return $m * $n / gcd($m, $n);
+}
