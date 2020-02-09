@@ -1,0 +1,10 @@
+<?php
+fscanf(STDIN, '%d', $n);
+$nums = explode(' ', trim(fgets(STDIN)));
+$cnts = array_count_values($nums);
+rsort($cnts);
+if ($cnts[0] > 1) {
+    echo "NO";
+} else {
+    echo "YES";
+}
