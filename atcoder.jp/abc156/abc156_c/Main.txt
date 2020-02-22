@@ -1,0 +1,13 @@
+<?php
+fscanf(STDIN, '%d', $cnt);
+$people = array_map('intval', explode(' ', trim(fgets(STDIN))));
+$limit = max($people);
+$ans = 1000000;
+for ($i=1; $i <= $limit; $i++) { 
+    $tmp = 0;
+    foreach ($people as $key => $person) {
+        $tmp += (($person - $i)**2);
+    }
+    $ans = min($ans, $tmp);
+}
+echo $ans;
