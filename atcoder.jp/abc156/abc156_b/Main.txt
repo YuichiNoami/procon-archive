@@ -1,0 +1,3 @@
+<?php
+fscanf(STDIN, '%d %d', $num, $k);
+echo strlen(base_convert($num, 10, $k));
