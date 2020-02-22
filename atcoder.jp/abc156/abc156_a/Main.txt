@@ -1,0 +1,7 @@
+<?php
+fscanf(STDIN, '%d %d', $cnt, $disp);
+if ($cnt >= 10) {
+    echo $disp;
+} else {
+    echo ($disp + (10-$cnt) * 100);
+}
