@@ -1,0 +1,12 @@
+{
+	"id": 12062868,
+	"epoch_second": 1587267860,
+	"problem_id": "abc162_b",
+	"contest_id": "abc162",
+	"user_id": "yuichin925",
+	"language": "PHP (7.4.4)",
+	"point": 200,
+	"length": 159,
+	"result": "AC",
+	"execution_time": 61
+}
